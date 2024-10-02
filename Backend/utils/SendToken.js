@@ -6,7 +6,8 @@ const SendToken = (User, msg, statusCode, res) => {
     const options = {
         expires: new Date(Date.now() + CookieExpire * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        sameSite: 'strict',
+        secure: true,
+        sameSite: 'None',
     }
 
     return res.status(statusCode).cookie("accessToken", token, options).json({
