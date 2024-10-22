@@ -17,6 +17,7 @@ import PaymentSuccessPage from './Pages/PaymentSuccessPage'
 import OrderDetailsPage from './Pages/OrderDetailsPage'
 import AdminDashboard from './Pages/AdminDashboard'
 import PageNotFound from './Pages/PageNotFound'
+import ForgetPassword from './Pages/ForgetPassPage'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Homepage />} />
             <Route path='/login' element={<Loginpage />} />
+            <Route path='/reset' element={<ForgetPassword />} />
             <Route path='/register' element={<Signup />} />
             <Route path='/wishlist' element={<WishlistPage />} />
             <Route path='/product' element={<FilterPage />} />
