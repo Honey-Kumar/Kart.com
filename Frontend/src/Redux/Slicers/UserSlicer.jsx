@@ -41,12 +41,11 @@ export const RegisterUser = createAsyncThunk('RegisterUser', async (data) => {
     try {
         console.log(data)
         const response = await axios.post(`${RequestURL}/user/new`, data, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-                'Access-Control-Allow-Origin': '*'
-            },
             withCredentials: true,
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
         });
         console.log(response)
         return response.data

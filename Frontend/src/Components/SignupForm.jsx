@@ -37,6 +37,7 @@ const SignupForm = () => {
         reader.onload = () => {
             if (reader.readyState === 2) {
                 setshowimg(reader.result);
+                setmypic(reader.result)
             }
         };
 

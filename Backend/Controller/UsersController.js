@@ -14,10 +14,11 @@ const CreateUser = CatchAsyncError(async (req, res, next) => {
     const response = await UserSchema.findOne({ email: req.body.email });
     if (!response) {
 
-        if (!req.body.avatar) {
+        if (!req.files || !req.files.avatar) {
             return next(new ErrorHandler("Must Upload Profile Image", 403))
         }
-        const mycloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        let file = req.files.avatar;
+        const mycloud = await cloudinary.v2.uploader.upload(file.tempFilePath, {
             folder: 'Users',
             width: 150,
             srop: 'scale'
