@@ -29,12 +29,13 @@ const SignupForm = () => {
 
     //changing showimg when mypic is uploaded
     const handlepicupload = (e) => {
+        const file = e.target.files[0];
+        setmypic(file)
         const reader = new FileReader();
 
         reader.onload = () => {
             if (reader.readyState === 2) {
                 setshowimg(reader.result);
-                setmypic(reader.result);
             }
         };
 
