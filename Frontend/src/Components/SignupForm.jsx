@@ -24,13 +24,14 @@ const SignupForm = () => {
     const [password, setpassword] = useState('')
     const [showimg, setshowimg] = useState(avatarPreview)
     const [mypic, setmypic] = useState('')
+    const [newfile, setnewfile] = useState('')
 
     console.log(firstname, lastname, email, password, showimg, mypic)
 
     //changing showimg when mypic is uploaded
     const handlepicupload = (e) => {
         const file = e.target.files[0];
-        setmypic(file)
+        setnewfile(file)
         const reader = new FileReader();
 
         reader.onload = () => {
@@ -52,7 +53,7 @@ const SignupForm = () => {
             formData.append('email', email);
             formData.append('password', password);
             if (mypic) {
-                formData.append('avatar', mypic);
+                formData.append('avatar', newfile);
             }
 
             await dispatch(RegisterUser(formData));
