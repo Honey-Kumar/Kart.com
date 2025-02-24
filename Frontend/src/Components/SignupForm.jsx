@@ -52,8 +52,8 @@ const SignupForm = () => {
             formData.append('lastname', lastname);
             formData.append('email', email);
             formData.append('password', password);
-            if (mypic) {
-                formData.append('avatar', mypic);
+            if (showimg) {
+                formData.append('avatar', newfile);
             }
 
             await dispatch(RegisterUser(formData));
