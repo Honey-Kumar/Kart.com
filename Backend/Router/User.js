@@ -8,7 +8,7 @@ UserRouter.route('/user/:id').delete(Authentication, DeteletUser).get(Authentica
 UserRouter.route('/user/login').post(LoginUser);
 UserRouter.route('/logout').get(Logout);
 UserRouter.route('/password/forget').post(ForgetPassword);
-UserRouter.route('/user/password/:token').put(Authentication, resetUserpassword);
+UserRouter.route('/user/password/:token').put(resetUserpassword);
 UserRouter.route('/admin/users').get(Authentication, forAdmin, AllUsersList);
 
 module.exports = UserRouter

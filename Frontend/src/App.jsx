@@ -39,7 +39,7 @@ function App() {
             />
             {/* <Route path='/account' element={<AccountPage />} /> */}
             <Route path='/product/:id' element={<ProtectedRoutes element={<ProductDetail />} />} />
-            <Route path='/user/password/:token' element={<ProtectedRoutes element={<ResetPasswordPage />} />} />
+            <Route path='/user/password/:token' element={<ResetPasswordPage />} />
             <Route path='/cart' element={<ProtectedRoutes element={<ProtectedRoutes element={<Cart />} />} />} />
             <Route path='/shipping' element={<ProtectedRoutes element={<ShippingPage />} />} />
             <Route path='/confirmOrder' element={<ProtectedRoutes element={<ConfirOrderPage />} />} />

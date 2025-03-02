@@ -92,6 +92,7 @@ const AllProduct = CatchAsyncError(async (req, res, next) => {
 //Update Product Details ---Admin
 const UpdateProduct = CatchAsyncError(async (req, res, next) => {
     const ProductId = req.params.id;
+    console.log("req.body ", req.body, " re.files ", req.files)
     const result = await ProductSchema.findById(ProductId);
     if (!result) {
         return next(new ErrorHandler("Product Details not found", 404))
@@ -123,6 +124,7 @@ const UpdateProduct = CatchAsyncError(async (req, res, next) => {
         runValidators: true,
         useFindAndModify: false,
     })
+    console.log("response ", response)
     return res.status(200).json({
         success: true,
         message: "Product Details Updated Successfully",
