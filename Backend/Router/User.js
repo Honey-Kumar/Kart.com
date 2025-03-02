@@ -7,7 +7,7 @@ UserRouter.route('/user/new').post(CreateUser);
 UserRouter.route('/user/:id').delete(Authentication, DeteletUser).get(Authentication, UserDetails).put(Authentication, UpdateUser);
 UserRouter.route('/user/login').post(LoginUser);
 UserRouter.route('/logout').get(Logout);
-UserRouter.route('/password/forget').post(Authentication, ForgetPassword);
+UserRouter.route('/password/forget').post(ForgetPassword);
 UserRouter.route('/user/password/:token').put(Authentication, resetUserpassword);
 UserRouter.route('/admin/users').get(Authentication, forAdmin, AllUsersList);
 
